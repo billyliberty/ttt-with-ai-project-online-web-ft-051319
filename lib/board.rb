@@ -41,4 +41,12 @@ class Board
     !(position(input) == " " || position(input) == "")
   end
 
+  def won?
+    WIN_COMBINATIONS.any? do |combo|
+      if position_taken?(combo[0]) && @cells[combo[0]] == @cells[combo[1]] && @cells[combo[1]] == @cells[combo[2]]
+        return combo
+      end
+    end
+  end
+
 end
