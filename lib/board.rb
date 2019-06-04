@@ -10,11 +10,11 @@ class Board
   end
 
   def display
-    puts " #{@cells[0]} | #{@cells[1]} | #{@cells[2]} "
+    puts " #{@board[0]} | #{@board[1]} | #{@board[2]} "
     puts "-----------"
-    puts " #{@cells[3]} | #{@cells[4]} | #{@cells[5]} "
+    puts " #{@board[3]} | #{@board[4]} | #{@board[5]} "
     puts "-----------"
-    puts " #{@cells[6]} | #{@cells[7]} | #{@cells[8]} "
+    puts " #{@board[6]} | #{@board[7]} | #{@board[8]} "
   end
 
   def full?
@@ -39,14 +39,6 @@ class Board
 
   def taken?(input)
     !(position(input) == " " || position(input) == "")
-  end
-
-  def won?
-    WIN_COMBINATIONS.any? do |combo|
-      if position_taken?(combo[0]) && @cells[combo[0]] == @cells[combo[1]] && @cells[combo[1]] == @cells[combo[2]]
-        return combo
-      end
-    end
   end
 
 end
