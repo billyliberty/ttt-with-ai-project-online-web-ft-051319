@@ -34,7 +34,7 @@ class Board
   end
 
   def position(input)
-    board[input.to_i-1]
+    @board[input.to_i-1]
   end
 
   def taken?(input)
